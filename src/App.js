@@ -1,17 +1,12 @@
 import './App.css';
-import { NavLink, Routes, Route } from 'react-router-dom';
 
-import Home from './components/routes/home';
-import About from './components/routes/about';
-import Contact from './components/routes/contact';
-import Todos from './components/routes/todos';
-import TodoItem from './components/todo-item';
-import Person from './components/Person';
+import Layout from './components/layout/Layout';
 
 function App() {
   return (
-    <div className='App'>
-      <nav
+    <Layout></Layout>
+    /* <div className='App'>
+      <Container
         style={{
           display: 'flex',
           alignItems: 'center',
@@ -69,7 +64,7 @@ function App() {
         >
           Todos
         </NavLink>
-      </nav>
+      </Container>
       <main>
         <Routes>
           <Route path='/' element={<Home />} />
@@ -80,10 +75,10 @@ function App() {
           </Route>
         </Routes>
         <section>
-          <Person />
+          <Person title='Class Components' />
         </section>
       </main>
-    </div>
+    </div> */
   );
 }
 

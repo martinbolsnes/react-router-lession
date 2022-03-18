@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Button, Container } from '@mantine/core';
+
 class Person extends React.Component {
   constructor(props) {
     super(props);
@@ -12,10 +14,17 @@ class Person extends React.Component {
     this.handleIncrease = () => {
       this.setState({ ...this.state, age: this.state.age + 1 });
     };
+
+    this.handleDecrease = () => {
+      this.setState({ ...this.state, age: this.state.age - 1 });
+    };
   }
 
   componentDidMount() {
     console.log('Component did mount');
+    setTimeout(() => {
+      this.setState({ name: 'Ola' });
+    }, 1000);
   }
 
   componentDidUpdate() {
@@ -29,12 +38,17 @@ class Person extends React.Component {
   render() {
     return (
       <div>
-        <h2>Class Components</h2>
+        <h2>{this.props.title}</h2>
         <h3>
           Name: {this.state.name} <br /> Age: {this.state.age}
         </h3>
         <br />
-        <button onClick={() => this.handleIncrease()}>Increase age</button>
+        <Container
+          style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}
+        >
+          <Button onClick={() => this.handleIncrease()}>Increase age</Button>
+          <Button onClick={() => this.handleDecrease()}>Decrease age</Button>
+        </Container>
       </div>
     );
   }
