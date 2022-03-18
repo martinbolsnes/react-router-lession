@@ -6,6 +6,7 @@ import About from './components/routes/about';
 import Contact from './components/routes/contact';
 import Todos from './components/routes/todos';
 import TodoItem from './components/todo-item';
+import Person from './components/Person';
 
 function App() {
   return (
@@ -78,6 +79,9 @@ function App() {
             <Route path=':todoId' element={<TodoItem />} />
           </Route>
         </Routes>
+        <section>
+          <Person />
+        </section>
       </main>
     </div>
   );

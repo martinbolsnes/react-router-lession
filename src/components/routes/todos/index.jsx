@@ -11,15 +11,15 @@ export default function Todos() {
       <p>This is the todo page</p>
       <br />
       <div>
-        {todos.map((todo) => {
+        {todos.map(({ id, title }) => {
           return (
-            <div key={todo.id}>
+            <div key={id}>
               <li>
                 <Link
                   style={{ textDecoration: 'none', color: 'black' }}
-                  to={`/todos/${todo.id}`}
+                  to={`/todos/${id}`}
                 >
-                  {todo.title}
+                  {title}
                 </Link>
               </li>
             </div>
